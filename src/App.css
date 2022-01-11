@@ -1,0 +1,34 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.block {
+    border: 1px solid darksalmon;
+    box-sizing: border-box;
+}
+
+.users-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.comments-block {
+    height: 50vh;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    overflow: scroll;
+}
+
+.posts-block {
+    height: 50vh;
+    overflow: scroll;
+}
+
+.Post, .Comment {
+    border-bottom: 1px solid powderblue;
+}
+
