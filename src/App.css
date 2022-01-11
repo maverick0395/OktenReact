@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 20px;
+}
+
+.launch {
+    padding: 10px 200px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border: 1px solid black;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
