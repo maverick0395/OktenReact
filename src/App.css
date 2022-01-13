@@ -1,0 +1,41 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.user {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    margin: 25px 0;
+
+}
+
+.users-wrapper {
+    width: 450px;
+
+    border: 1px solid darkred;
+
+    padding: 5px;
+}
+
+.details {
+    padding: 10px;
+
+    border: 1px solid darkred;
+}
+
+.posts {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+
+.post {
+    padding: 0 10px;
+
+    border: 1px solid darksalmon;
+}
