@@ -1,10 +1,11 @@
 import User from '../User/User';
 
-const Users = ({getUserId, users}) => {
+
+const Users = ({users}) => {
 
     return (
         <div className={'users-wrapper'}>
-            {users.map(value => <User key={value.id} user={value} getUserId={getUserId} />)}
+            {users.map(value => <User key={value.id} user={value} />)}
         </div>
     );
 };

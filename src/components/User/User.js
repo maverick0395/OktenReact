@@ -1,10 +1,9 @@
 
-const User = ({user:{id, name, email}, getUserId}) => {
+const User = ({user:{id, name, username, email}}) => {
 
     return (
         <div className={'user'}>
-            {id}--{name}--{email}
-            <button onClick={()=>getUserId(id)}>getDetails</button>
+            {id}  {name} -- {username} -- {email}
         </div>
     );
 };

@@ -1,18 +1,14 @@
 import Users from './components/Users/Users';
-import UserDetails from "./components/UserDetails/UserDetails";
-import Posts from "./components/Posts/Posts";
 import {userService} from "./services/user.service";
-import {postService} from "./services/post.service";
 import './App.css';
 
 import {useState, useEffect} from "react";
 
 
 const App = () => {
-    const [user, setUser] = useState(null);
+    const [form, setForm] = useState({name:'', username:'', email:''});
     const [users, setUsers] = useState([]);
-    const [posts, setPosts] = useState([]);
-    const [userPosts, setUserPosts] = useState([])
+    const [defaultUsers, setDefaultUsers] = useState([]);
 
     useEffect(()=>{
         userService.getAll()
@@ -20,28 +16,48 @@ const App = () => {
 
     }, []);
 
-    useEffect(()=>{
-        postService.getAll()
-            .then(value => setPosts(value))
-    }, [])
+   useEffect(()=>{
+       userService.getAll()
+           .then(value => setDefaultUsers(value))
+   }, [])
 
-    const getUserId = (id) => {
-        userService.getById(id)
-            .then(value => setUser(value))
-        if (userPosts) {
-            setUserPosts([]);
-        }
+
+
+    const find = (e) => {
+        e.preventDefault();
+
+        setUsers(defaultUsers.filter(value => value.name.toLowerCase().includes(form.name.toLowerCase()))
+                            .filter(value => value.username.toLowerCase().includes(form.username.toLowerCase()))
+                            .filter(value => value.email.toLowerCase().includes(form.email.toLowerCase())));
+
+        console.log(users);
+        // if (Object.entries(form).some(([key, value]) => value)) {
+        //     for (let prop in form) {
+        //         if (form[prop]) {
+        //
+        //             setUsers(defaultUsers.filter(value => value[prop].toLowerCase().includes(form[prop].toLowerCase())));
+        //         }
+        //     }
+        // } else {
+        //     setUsers(defaultUsers);
+        // }
     }
 
-    const getPosts = (userId) => {
-       setUserPosts(posts.filter(value=>value.userId === userId))
+    const formHandler = (e) => {
+        e.preventDefault();
+        setForm({...form, [e.target.name]:e.target.value});
     }
+
 
     return (
         <div className={'wrapper'}>
-            <Users getUserId={getUserId} users={users}/>
-            {user && <UserDetails user={user} getPosts={getPosts}/>}
-            {userPosts && <Posts posts={userPosts}/>}
+            <form onSubmit={find}>
+                <label>Name: <input type="text" name={'name'} value={form.name} onChange={formHandler} /></label>
+                <label>Username: <input type="text" name={'username'} value={form.username} onChange={formHandler }/></label>
+                <label>Email: <input type="text" name={'email'} value={form.email} onChange={formHandler} /></label>
+                <button>Find</button>
+            </form>
+            <Users users={users}/>
         </div>
     );
 };

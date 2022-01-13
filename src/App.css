@@ -1,23 +1,26 @@
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
 
 }
 
 .user {
-    width: 100%;
+    width: 65%;
+
+
 
     display: flex;
     justify-content: space-between;
 
-    margin: 25px 0;
+    margin: 15px 0;
+    padding: 5px 10px;
+
+    border: 1px solid black;
 
 }
 
 .users-wrapper {
-    width: 450px;
-
-    border: 1px solid darkred;
 
     padding: 5px;
 }
@@ -38,4 +41,9 @@
     padding: 0 10px;
 
     border: 1px solid darksalmon;
+}
+
+form {
+    display: flex;
+    column-gap: 10px;
 }
