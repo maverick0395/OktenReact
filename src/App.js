@@ -29,25 +29,12 @@ const App = () => {
         setUsers(defaultUsers.filter(value => value.name.toLowerCase().includes(form.name.toLowerCase()))
                             .filter(value => value.username.toLowerCase().includes(form.username.toLowerCase()))
                             .filter(value => value.email.toLowerCase().includes(form.email.toLowerCase())));
-
-        console.log(users);
-        // if (Object.entries(form).some(([key, value]) => value)) {
-        //     for (let prop in form) {
-        //         if (form[prop]) {
-        //
-        //             setUsers(defaultUsers.filter(value => value[prop].toLowerCase().includes(form[prop].toLowerCase())));
-        //         }
-        //     }
-        // } else {
-        //     setUsers(defaultUsers);
-        // }
     }
 
     const formHandler = (e) => {
         e.preventDefault();
         setForm({...form, [e.target.name]:e.target.value});
     }
-
 
     return (
         <div className={'wrapper'}>
