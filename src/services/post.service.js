@@ -1,17 +1,8 @@
+import {axiosService} from "./axios.service";
 import {urls} from "../config/urls";
 
-const getAll = () => {
-    return fetch(urls.posts)
-        .then(value => value.json())
-}
-
-const getById = (id) => {
-    return fetch(`${urls.posts}/${id}`)
-        .then(value => value.json())
-}
-
-
 export const postService = {
-    getAll,
-    getById
+    getAll:()=>axiosService.get(urls.posts).then(value => value.data),
+    getById:(id)=>axiosService.get(`${urls.posts}/${id}`).then(value => value.data),
+    getUserPosts:(id)=>axiosService.get(`${urls.posts}?userId=${id}`).then(value => value.data)
 }

@@ -28,19 +28,20 @@ const App = () => {
     const getUserId = (id) => {
         userService.getById(id)
             .then(value => setUser(value))
-        if (userPosts) {
-            setUserPosts([]);
-        }
+
+        setUserPosts([]);
+
     }
 
-    const getPosts = (userId) => {
-       setUserPosts(posts.filter(value=>value.userId === userId))
+    const getUserPosts = (id) => {
+        postService.getUserPosts(id)
+            .then(value => setUserPosts(value))
     }
 
     return (
         <div className={'wrapper'}>
             <Users getUserId={getUserId} users={users}/>
-            {user && <UserDetails user={user} getPosts={getPosts}/>}
+            {user && <UserDetails user={user} getUserPosts={getUserPosts}/>}
             {userPosts && <Posts posts={userPosts}/>}
         </div>
     );

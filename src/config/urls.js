@@ -5,4 +5,7 @@ export const urls = {
     posts: `${baseUrl}/posts`,
     comments: `${baseUrl}/comments`,
 
+
 }
+
+export default baseUrl;

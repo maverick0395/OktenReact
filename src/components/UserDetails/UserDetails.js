@@ -1,4 +1,4 @@
-const UserDetails = ({user, getPosts}) => {
+const UserDetails = ({user, getUserPosts}) => {
 
     return (
         <div className={'details'}>
@@ -24,7 +24,7 @@ const UserDetails = ({user, getPosts}) => {
                     <span>bs: {user.company.bs}</span>
                 </p>
             </div>
-            <button onClick={()=>getPosts(user.id)}>Get posts</button>
+            <button onClick={()=>getUserPosts(user.id)}>Get posts</button>
         </div>
     );
 
