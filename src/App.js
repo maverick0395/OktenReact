@@ -6,14 +6,16 @@ import css from './App.module.css'
 import {useState} from "react";
 
 const App = () => {
+    const [cars, setCars] = useState([]);
     const [trigger, setTrigger] = useState(null);
+    const[updateTrigger, setUpdateTrigger] = useState(null);
 
     const create = data => {
         setTrigger(data);
     }
 
-    const update = (id, data) => {
-        carService.updateById(id, data).then(() => console.log('updated'));
+    const update = (data) => {
+        setUpdateTrigger(data);
     }
 
     return (
@@ -22,7 +24,7 @@ const App = () => {
                 <Form handler={create} formType={'create'}/>
                 <Form handler={update} formType={'update'}/>
             </div>
-            <Cars trigger={trigger}/>
+            <Cars trigger={trigger} updateTrigger={updateTrigger} setCars={setCars} cars={cars}/>
 
         </div>
     );

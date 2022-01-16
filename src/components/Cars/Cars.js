@@ -3,13 +3,12 @@ import {useEffect, useState} from "react";
 import {carService} from "../../services/car.service";
 import Car from "../Car/Car";
 
-const Cars = ({trigger}) => {
-    const [cars, setCars] = useState([]);
-    const [state, setState] = useState(null);
+const Cars = ({trigger, updateTrigger, setCars, cars}) => {
+
 
     useEffect(()=>{
         carService.getAll().then(value => setCars([...value]));
-    }, [trigger])
+    }, [trigger, updateTrigger])
 
     const rerender = () => {
         carService.getAll().then(value => setCars([...value]));

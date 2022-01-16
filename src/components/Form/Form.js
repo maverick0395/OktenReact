@@ -18,14 +18,13 @@ const Form = ({handler, formType}) => {
     const submit = async (data) => {
         try {
             if (formType === 'create') {
-                console.log('check');
                 const newCar = await carService.create(data);
-                console.log(newCar);
                 handler(newCar);
 
             } else if (formType === 'update') {
-                console.log(data);
-                handler(data.id,data);
+                await carService.updateById(data.id, data).then(() => console.log('updated'));
+                handler(data);
+
             }
         } catch (error) {
             setFormError(error.response.data);
