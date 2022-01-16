@@ -1,8 +1,7 @@
-const baseUrl = 'https://jsonplaceholder.typicode.com';
+const baseUrl = 'http://91.201.233.14/api/v2';
+
+export default baseUrl;
 
 export const urls = {
-    users: `${baseUrl}/users`,
-    posts: `${baseUrl}/posts`,
-    comments: `${baseUrl}/comments`,
-
+    cars: `${baseUrl}/cars`
 }
