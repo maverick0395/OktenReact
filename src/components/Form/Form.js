@@ -3,28 +3,24 @@ import {useState} from "react";
 import {joiResolver} from "@hookform/resolvers/joi";
 
 import {carService} from "../../services/car.service";
-import css from "./Form.module.css";
 import {CarValidator} from "../../validators/car.validator";
+import css from "./Form.module.css";
 
-
-const Form = ({handler, formType}) => {
+const Form = ({handler, formType, rerender}) => {
     const [formError, setFormError] = useState({});
 
     const {
         register, handleSubmit, watch, formState: {errors}
     } = useForm({resolver: joiResolver(CarValidator), mode: "onTouched"});
 
-
     const submit = async (data) => {
         try {
             if (formType === 'create') {
                 const newCar = await carService.create(data);
                 handler(newCar);
-
             } else if (formType === 'update') {
-                await carService.updateById(data.id, data).then(() => console.log('updated'));
-                handler(data);
-
+                const updatedCar = await carService.updateById(data.id, data).then(() => console.log('updated'));
+                rerender();
             }
         } catch (error) {
             setFormError(error.response.data);
@@ -32,11 +28,9 @@ const Form = ({handler, formType}) => {
     }
 
 
-
-
     return (
         <div>
-            <form onSubmit={handleSubmit(submit)}>
+            <form onSubmit={handleSubmit(submit)} >
                 {formType === 'update' &&
                 <div><label>id: <input type="number" defaultValue={''} {...register('id')} /></label></div>}
                 <div><label>Model: <input type="text" defaultValue={''} {...register('model')} /></label></div>

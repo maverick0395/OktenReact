@@ -1,6 +1,6 @@
 import css from "./Car.module.css";
 
-const Car = ({car:{id, model, price, year}, deleteCar}) => {
+const Car = ({car: {id, model, price, year}, deleteCar}) => {
 
     return (
         <div className={css.Car}>
@@ -8,7 +8,7 @@ const Car = ({car:{id, model, price, year}, deleteCar}) => {
             <div>model: {model}</div>
             <div>price: {price}</div>
             <div>year: {year}</div>
-            <button onClick={()=>deleteCar(id)}>Delete</button>
+            <button onClick={() => deleteCar(id)}>Delete</button>
         </div>
     );
 };
