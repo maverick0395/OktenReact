@@ -1,7 +1,7 @@
 import {Outlet, useLocation, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 
-import {postService} from "../../services/index";
+import {postService} from "../../services";
 import css from "./PostDetails.module.css";
 
 const PostDetails = () => {

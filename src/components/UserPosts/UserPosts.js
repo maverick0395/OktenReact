@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 
-import {postService} from "../../services/index";
-import {UserPost} from "../index";
+import {postService} from "../../services";
+import {UserPost} from "..";
 import css from "./UserPosts.module.css"
 
 const UserPosts = () => {

@@ -1,0 +1,9 @@
+.album {
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid darkgray;
+}
+
+.album > * {
+    margin: 10px;
+}

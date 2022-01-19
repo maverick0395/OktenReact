@@ -1,7 +1,7 @@
 import {Outlet, useLocation, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 
-import {userService} from "../../services/index";
+import {userService} from "../../services";
 import css from "./UserDetails.module.css";
 
 const UserDetails = () => {

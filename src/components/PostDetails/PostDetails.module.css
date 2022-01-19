@@ -1,31 +1,14 @@
-
-
-/*.post_details__inner > * {*/
-/*    margin-bottom: 10px;*/
-/*}*/
-
-/*.post_details__inner > button {*/
-/*    position: absolute;*/
-/*    left: 50%;*/
-/*    margin-right: -50%;*/
-/*    margin-top: 100px;*/
-/*    transform: translate(-50%, -50%);*/
-/*}*/
-
 .right_side {
     width: calc(100vw - 500px);
     height: calc(100vh - 100px);
 
     display: flex;
     flex-direction: column;
-
 }
 
 .post_details {
     width: 100%;
     height: 40%;
-
-    border: 1px solid black;
 
     padding: 50px 20px;
 

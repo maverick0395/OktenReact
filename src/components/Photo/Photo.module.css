@@ -1,0 +1,6 @@
+.photo {
+    padding: 10px;
+
+    border-bottom: 1px solid darkgray;
+    box-sizing: border-box;
+}

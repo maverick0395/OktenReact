@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 
-import {commentService} from "../../services/index";
-import {Comment} from "../index";
+import {commentService} from "../../services";
+import {Comment} from "../";
 import css from "./PostComments.module.css";
 
 const PostComments = () => {
