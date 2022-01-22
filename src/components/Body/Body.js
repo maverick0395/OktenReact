@@ -1,29 +1,33 @@
-import baseUrl from "../../configs/urls";
+import axios from "axios";
 import {useEffect, useState} from "react";
-import {imageService} from "../../services/image.service";
 
+import baseUrl from "../../configs/urls";
+import css from "./Body.module.css";
 
 const Body = (state) => {
     const [url, setUrl] = useState(null)
-    const [update, setUpdate] = useState(0)
+    const [update, setUpdate] = useState(0);
 
     useEffect(() => {
         if (state.keyword) {
-            setUrl(`${baseUrl}/${state.keyword}`)
+            axios.get(`${baseUrl}/${state.keyword}`).then(value => setUrl(value.request.responseURL))
         }
-    }, [state], [update])
+    }, [update, state.keyword])
 
-    const updateImage = (url, e) => {
+    const forceUpdate = (e) => {
         e.preventDefault();
         setUpdate(update + 1);
-        console.log(update);
     }
     return (
         <div>
-            {url && <img src={url} alt={state}/>}
-            {url && <button onClick={(e) => updateImage(url, e)}>Reload</button>}
+            {url &&
+            <div className={css.wrapper}>
+                <img src={url} alt={state}/>
+                <button onClick={(e) => forceUpdate(e)}>Reload</button>
+            </div>
+            }
         </div>
     );
 };
 
-export default Body;
+export {Body};

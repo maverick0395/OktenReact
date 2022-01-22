@@ -1,0 +1,18 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.wrapper img {
+    width: 320px;
+    height: 240px;
+
+    margin-bottom: 20px;
+}
+
+.wrapper button {
+    width: fit-content;
+
+}
