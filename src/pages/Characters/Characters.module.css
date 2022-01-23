@@ -1,0 +1,28 @@
+.characters_grid {
+    padding: 20px 0 100px 100px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-row-gap: 20px;
+}
+
+.buttons_wrapper {
+    /*margin-top: 40px;*/
+    bottom: 20px;
+    left: calc(50% - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+
+    position: fixed;
+    z-index: 2;
+}
+
+input {
+    width: 150px;
+    height: 40px;
+
+    font-size: 24px;
+}

@@ -1,0 +1,11 @@
+.alive {
+    color: greenyellow;
+}
+
+.dead {
+    color: darkred;
+}
+
+.char_info {
+    padding-bottom: 20px;
+}

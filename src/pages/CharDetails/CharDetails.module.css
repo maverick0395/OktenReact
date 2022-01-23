@@ -1,0 +1,25 @@
+
+.char_details {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.episode_list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column-gap: 70px;
+    grid-row-gap: 15px;
+
+    list-style-type: none;
+}
+
+.episode_list > a {
+    width: 80px;
+}
+
+.none {
+    display: none;
+}

@@ -1,0 +1,10 @@
+.char_card img {
+    width: 200px;
+    height: 200px;
+
+}
+
+.char_list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
