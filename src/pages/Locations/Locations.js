@@ -2,7 +2,7 @@ import {Outlet} from "react-router-dom";
 import {useEffect, useState} from "react";
 
 import {locationService} from "../../services";
-import {Location} from "../../components";
+import {Location, LocationFilterForm} from "../../components";
 import css from "./Locations.module.css";
 
 const Locations = () => {
@@ -10,16 +10,22 @@ const Locations = () => {
     const [info, setInfo] = useState([]);
 
     useEffect(()=>{
-        locationService.getAll().then(value => (setLocations(value.results), setInfo(value.info)))
+        locationService.getAll().then(value => (setLocations(value.results), setInfo(value.info)));
     },[]);
 
     const renderPage = (e) => {
         if (info[e.target.value]) {
-            locationService.getByPage(info[e.target.value]).then(value => (setLocations(value.results), setInfo(value.info)))
+            locationService.getByPage(info[e.target.value]).then(value => (setLocations(value.results), setInfo(value.info)));
         }
     }
+
+    const onFilterHandler = (newState) => {
+        setLocations(newState);
+    }
+
     return (
         <div>
+            <LocationFilterForm onFilterHandler={onFilterHandler}/>
             <div className={css.locations_grid}>
                 {locations && locations.map(location => <Location key={location.id} location={location}/>)}
             </div>

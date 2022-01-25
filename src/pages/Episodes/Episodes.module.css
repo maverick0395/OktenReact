@@ -1,4 +1,4 @@
-.locations_grid {
+.episodes_grid {
     padding: 20px 0 100px 100px;
 
     display: grid;
@@ -8,6 +8,7 @@
 }
 
 .buttons_wrapper {
+    /*margin-top: 40px;*/
     bottom: 20px;
     left: calc(50% - 150px);
     display: flex;

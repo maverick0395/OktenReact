@@ -12,12 +12,11 @@ const CharDetails = () => {
                 <h3>{state.name}</h3>
                 <p>Status: {state.status}</p>
                 <p>Species: {state.species}</p>
-                {state.type ? <p>Type: {state.type}</p> : <p className={css.none}></p>}
+                {state.type ? <p>Type: {state.type}</p> : null}
                 <p>Gender: {state.gender}</p>
                 <p>Location: <NavLink
-                    to={`/locations/${state.location.url.split('/').pop()}`}>{state.location.name}</NavLink>
+                    to={`/locations/${state.location.url.split('/').pop()}`} state={state}>{state.location.name}</NavLink>
                 </p>
-
             </div>
             <p>Episodes</p>
             <ul className={css.episode_list}>{state.episode.map(ep => <NavLink

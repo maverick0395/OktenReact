@@ -1,0 +1,28 @@
+.ep_details {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.char_list {
+    width: 100vw;
+
+    padding-left: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 15px;
+
+    list-style-type: none;
+}
+
+.char_list > a {
+    width: 80px;
+}
+
+.none {
+    display: none;
+}

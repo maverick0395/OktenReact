@@ -3,7 +3,6 @@ import {NavLink} from "react-router-dom";
 import css from "./Location.module.css";
 
 const Location = ({location}) => {
-
     return (
         <div className={css.location_card}>
             <h3>Location: {location.name}</h3>

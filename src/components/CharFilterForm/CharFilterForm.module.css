@@ -1,0 +1,17 @@
+.form {
+    margin: 10px;
+}
+
+.form form {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.form input {
+    height: 20px;
+}
+
+.red {
+    color: red;
+}

@@ -1,7 +1,7 @@
 import {Route, Routes} from "react-router-dom";
 
 import {Header} from "./components";
-import {Characters, CharDetails, Episodes, Home, Locations, LocationDetails, Search} from "./pages";
+import {Characters, CharDetails, Episodes, EpisodeDetails, Home, Locations, LocationDetails} from "./pages";
 
 
 function App() {
@@ -14,9 +14,8 @@ function App() {
                     <Route path={'characters/:id'} element={<CharDetails/>}/>
                     <Route path={'locations'} element={<Locations/>}/>
                     <Route path={'locations/:id'} element={<LocationDetails/>}/>
-
                     <Route path={'episodes'} element={<Episodes/>}/>
-                    <Route path={'search'} element={<Search/>}/>
+                    <Route path={'episodes/:id'} element={<EpisodeDetails/>}/>
                 </Route>
             </Routes>
         </>

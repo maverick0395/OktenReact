@@ -10,7 +10,6 @@ const Header = () => {
                 <NavLink to="/characters">Characters</NavLink>
                 <NavLink to="/locations">Locations</NavLink>
                 <NavLink to="/episodes">Episodes</NavLink>
-                <NavLink to="/search">Search</NavLink>
             </div>
             <div className={css.outlet}>
                 <Outlet/>

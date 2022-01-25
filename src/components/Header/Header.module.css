@@ -3,7 +3,6 @@
 
     background: black;
 
-
     display: flex;
     column-gap: 20px;
     justify-content: center;
@@ -14,8 +13,4 @@
     text-decoration: none;
     color: white;
     font-size: 28px;
-}
-
-.outlet {
-    
 }

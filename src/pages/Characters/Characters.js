@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 
 import {characterService} from "../../services";
-import {Character} from "../../components";
+import {Character, CharFilterForm} from "../../components";
 import css from "./Characters.module.css";
 
 const Characters = () => {
@@ -18,8 +18,13 @@ const Characters = () => {
         }
     }
 
+    const onFilterHandler = (newState) => {
+        setCharacters(newState);
+    }
+
     return (
         <>
+            <CharFilterForm onFilterHandler={onFilterHandler}/>
             <div className={css.characters_grid}>
                 {characters && characters.map(char => <Character key={char.id} char={char}/>)}
             </div>
