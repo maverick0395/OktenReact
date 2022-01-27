@@ -1,41 +1,15 @@
 import {useReducer} from "react";
+
 import {Counter} from "../Counter/Counter";
 
 const reducer = (state, action) => {
-    switch (action.id) {
-        case 1:
-            switch (action.type) {
-                case 'dec':
-                    return {...state, counter1: {...state.counter1, value: state.counter1.value - 1}}
-                case 'inc':
-                    return {...state, counter1: {...state.counter1, value: state.counter1.value + 1}}
-                case 'res':
-                    return {...state, counter1: {...state.counter1, value: 0}}
-                default:
-                    throw new Error('Error')
-            }
-        case 2:
-            switch (action.type) {
-                case 'dec':
-                    return {...state, counter2: {...state.counter2, value: state.counter2.value - 1}}
-                case 'inc':
-                    return {...state, counter2: {...state.counter2, value: state.counter2.value + 1}}
-                case 'res':
-                    return {...state, counter2: {...state.counter2, value: 0}}
-                default:
-                    throw new Error('Error')
-            }
-        case 3:
-            switch (action.type) {
-                case 'dec':
-                    return {...state, counter3: {...state.counter3, value: state.counter3.value - 1}}
-                case 'inc':
-                    return {...state, counter3: {...state.counter3, value: state.counter3.value + 1}}
-                case 'res':
-                    return {...state, counter3: {...state.counter3, value: 0}}
-                default:
-                    throw new Error('Error')
-            }
+    switch (action.type) {
+        case 'dec':
+            return {...state, [action.id]: {...state[action.id], value: state[action.id].value - 1}}
+        case 'inc':
+            return {...state, [action.id]: {...state[action.id], value: state[action.id].value + 1}}
+        case 'res':
+            return {...state, [action.id] : {...state[action.id], value: 0}}
         default:
             throw new Error('Error')
     }
@@ -52,7 +26,7 @@ const Counters = () => {
         dispatch({type: value, id: id});
     }
 
-
+    console.log(state);
     return (
         <div>
             <Counter state={state.counter1} handler={onClickHandler}/>

@@ -3,7 +3,7 @@ import css from "./Counter.module.css";
 const Counter = ({state, handler}) => {
     const handleClick = (e) => {
         e.preventDefault();
-        handler(e.target.value, state.id);
+        handler(e.target.value, `counter${state.id}`);
     }
 
 
