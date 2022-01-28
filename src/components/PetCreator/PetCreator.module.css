@@ -1,0 +1,17 @@
+.page_wrapper {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+
+}
+
+.form_wrapper > div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.form_wrapper > div > button {
+    height: fit-content;
+}
