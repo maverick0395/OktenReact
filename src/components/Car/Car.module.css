@@ -1,12 +1,12 @@
 .car_wrap {
-    width: fit-content;
+    width: 200px;
 
     margin-top: 10px;
 
     padding: 5px;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
 
     border: 1px solid black;
 
@@ -16,4 +16,7 @@
 
 .car_wrap button {
     height: fit-content;
+    width: fit-content;
+
+    align-self: center;
 }

@@ -1,7 +1,7 @@
 import {useDispatch} from "react-redux";
 
 import css from "./Car.module.css"
-import {deleteCarThunk, updateCar} from "../../store";
+import {deleteCarThunk} from "../../store";
 
 const Car = ({car}) => {
     const dispatch = useDispatch();

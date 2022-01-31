@@ -1,4 +1,8 @@
 .form {
+    margin-top: 30px;
+
+    padding: 0 30px;
+
     display: flex;
     flex-direction: column;
     row-gap: 15px;

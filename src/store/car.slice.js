@@ -1,4 +1,5 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
+
 import {carService} from "../services";
 
 export const getAllCars = createAsyncThunk(
@@ -8,7 +9,7 @@ export const getAllCars = createAsyncThunk(
             const cars = await carService.getAll();
             return cars
         } catch (e) {
-            return rejectWithValue(e.message)
+            return rejectWithValue(e.message);
         }
     }
 )
@@ -64,7 +65,6 @@ const carSlice = createSlice({
             state.cars = state.cars.filter(car => car.id !== action.payload.id)
         },
         updateCar: (state, action) => {
-            console.log(action.payload.data);
             state.cars[state.cars.findIndex(car => car.id === action.payload.data.id)] = action.payload.data;
         }
     },
