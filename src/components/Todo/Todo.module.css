@@ -1,0 +1,16 @@
+.todo_wrapper {
+    margin-top: 10px;
+
+    min-width: 400px;
+    border: 1px solid powderblue;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.todo_wrapper button {
+    width: fit-content;
+    height: fit-content;
+}
+
