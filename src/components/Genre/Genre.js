@@ -1,7 +1,9 @@
+import {NavLink} from "react-router-dom";
+
 const Genre = ({genre}) => {
     return (
         <div>
-            <h1>{genre.name}</h1>
+            <NavLink to={`/genres/${genre.id}`} state={genre}><h1>{genre.name}</h1></NavLink>
         </div>
     );
 };
