@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 
-import {getAllMoviesByGenre} from "../../store"
+import {clearMovies, getAllMoviesByGenre} from "../../store"
 import {Movie} from "../../components/Movie/Movie";
 
 const MoviesByGenre = () => {
@@ -14,6 +14,8 @@ const MoviesByGenre = () => {
     useEffect(() => {
         dispatch(getAllMoviesByGenre({id, currentPage}));
         window.scrollTo(0, 0);
+
+        return dispatch(clearMovies([]));
     }, [currentPage])
 
     const toNextPage = () => {

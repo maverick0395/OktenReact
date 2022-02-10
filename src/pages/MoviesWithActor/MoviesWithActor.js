@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 
-import {getMoviesWithActor} from "../../store"
+import {clearMovies, getMoviesWithActor} from "../../store"
 import {Movie} from "../../components/Movie/Movie";
 
 const MoviesWithActor = () => {
@@ -14,6 +14,8 @@ const MoviesWithActor = () => {
     useEffect(() => {
         dispatch(getMoviesWithActor({actorId, currentPage}));
         window.scrollTo(0, 0);
+
+        return dispatch(clearMovies([]));
     }, [currentPage])
 
     const toNextPage = () => {

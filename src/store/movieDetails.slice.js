@@ -33,6 +33,11 @@ const movieDetailsSlice = createSlice({
         status: null,
         error: null
     },
+    reducers: {
+        clearMovieDetails: (state, action) => {
+            state.movieDetails = action.payload;
+        }
+    },
     extraReducers: {
         [getMovieDetails.pending]:
             (state) => {
@@ -69,5 +74,7 @@ const movieDetailsSlice = createSlice({
 })
 
 const movieDetailsReducer = movieDetailsSlice.reducer;
+
+export const {clearMovieDetails} = movieDetailsSlice.actions;
 
 export default movieDetailsReducer;

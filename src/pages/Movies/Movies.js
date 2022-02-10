@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 
-import {getAllMovies} from "../../store"
+import {clearMovies, getAllMovies} from "../../store"
 import {Movie} from "../../components/Movie/Movie";
 
 const Movies = () => {
@@ -12,6 +12,8 @@ const Movies = () => {
     useEffect(() => {
         dispatch(getAllMovies(currentPage));
         window.scrollTo(0, 0);
+
+        return dispatch(clearMovies([]));
     }, [currentPage])
 
     const toNextPage = () => {

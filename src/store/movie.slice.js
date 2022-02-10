@@ -17,8 +17,6 @@ export const getAllMoviesByGenre = createAsyncThunk(
     'movieSlice/getAllMoviesByGenre',
     async ({id, currentPage},  {rejectWithValue}) => {
         try {
-            console.log(id);
-            console.log(currentPage);
             const movies = await moviesService.getByGenre(id, currentPage);
             return movies.results;
         } catch (e) {
@@ -46,6 +44,11 @@ const movieSlice = createSlice({
         movies: [],
         status: null,
         error: null
+    },
+    reducers: {
+       clearMovies: (state, action) => {
+           state.movies = action.payload;
+       }
     },
     extraReducers: {
         [getAllMovies.pending]:
@@ -97,5 +100,7 @@ const movieSlice = createSlice({
 })
 
 const movieReducer = movieSlice.reducer;
+
+export const {clearMovies} = movieSlice.actions;
 
 export default movieReducer;
